@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Log</name>
+    </assembly>
+    <members>
+        <member name="T:LogDESClass.DESClass">
+            <summary>
+            DES加密
+            </summary>
+        </member>
+        <member name="M:LogDESClass.DESClass.EncryptDES(System.String,System.String)">
+            <summary>
+            DES加密字符串
+            </summary>
+            <param name="encryptString">待加密的字符串  </param>
+            <param name="encryptKey">加密密钥,要求为8位 </param>
+            <returns>加密成功返回加密后的字符串，失败返回源串</returns>
+        </member>
+        <member name="M:LogDESClass.DESClass.DecryptDES(System.String,System.String)">
+            <summary>
+            DES解密字符串
+            </summary>
+            <param name="decryptString">待解密的字符串</param>
+            <param name="decryptKey">解密密钥,要求为8位,和加密密钥相同</param>
+            <returns>解密成功返回解密后的字符串，失败返源串</returns>
+        </member>
+        <member name="T:Log">
+            <summary>
+            打印日志
+            </summary>
+        </member>
+        <member name="F:Log.IsShowScreen">
+            <summary>
+            是否手机上显示屏幕日志 true=显示 false=不显示 
+            </summary>
+        </member>
+        <member name="F:Log.ShowLogWarning">
+            <summary>
+            是否显示警告的日志 默认false
+            </summary>
+        </member>
+        <member name="F:Log.ShowLogError">
+            <summary>
+            是否显示错误的日志 默认false
+            </summary>
+        </member>
+        <member name="F:Log.LineCount">
+            <summary>
+            允许记录的日志行数
+            </summary>
+        </member>
+        <member name="F:Log.IsShow">
+            <summary>
+            是否打印日志
+            </summary>
+        </member>
+        <member name="F:Log.IsTraceInfo">
+            <summary>
+            是否获取跟踪信息
+            </summary>
+        </member>
+        <member name="F:Log.IsTime">
+            <summary>
+            是否显示打印时间
+            </summary>
+        </member>
+        <member name="F:Log.writeLog">
+            <summary>
+            是否写入本地日志
+            </summary>
+        </member>
+        <member name="F:Log.whiteDictionary">
+            <summary>
+            白名单
+            </summary>
+        </member>
+        <member name="F:Log.isUnityDebugBuild">
+            <summary>
+            是否是unity的调试模式
+            </summary>
+        </member>
+        <member name="M:Log.initDebugListen">
+            <summary>
+            是否debug捕获
+            </summary>
+        </member>
+        <member name="F:Log.dataTime">
+            <summary>
+            日志的名称
+            </summary>
+        </member>
+        <member name="F:Log.isLogTime">
+            <summary>
+            是否输出了 日志时间
+            </summary>
+        </member>
+        <member name="F:Log.isLogTimeWarning">
+            <summary>
+            是否输出了 日志时间
+            </summary>
+        </member>
+        <member name="F:Log.isLogTimeError">
+            <summary>
+            是否输出了 日志时间
+            </summary>
+        </member>
+        <member name="F:Log.isLogTimePhone">
+            <summary>
+            是否输出了 日志时间
+            </summary>
+        </member>
+        <member name="F:Log.LineLength">
+            <summary>
+            如果打印过长在那个位置换行(半角为单位)
+            </summary>
+        </member>
+        <member name="M:Log.Init(System.Int32,UnityEngine.Font)">
+            <summary>
+            初始日志屏幕显示
+            </summary>
+            <param name="lineCount">日志允许记录的最大条数</param>
+            <param name="font">日志所使用的字体</param>
+        </member>
+        <member name="M:Log.info(System.Object[])">
+            <summary>
+            打印日志
+            </summary>
+            <param name="prams"></param>
+        </member>
+        <member name="M:Log.infoPhone(System.Object[])">
+            <summary>
+            打印日志到手机本地
+            </summary>
+            <param name="prams"></param>
+        </member>
+        <member name="M:Log.infoWarning(System.Object[])">
+            <summary>
+            输出警告信息 使用前请设置ShowLogWarning为true 默认是false
+            </summary>
+            <param name="prams"></param>
+        </member>
+        <member name="M:Log.infoError(System.Object[])">
+            <summary>
+            输出警告信息 请使用前设置ShowLogError为true 默认是false
+            </summary>
+            <param name="prams"></param>
+        </member>
+        <member name="M:Log.show(System.String,System.String)">
+            <summary>
+            打印带标记日志
+            </summary>
+            <param name="str"></param>
+            <param name="target"></param>
+        </member>
+        <member name="F:Log.ListInfo">
+            <summary>
+            当前系统日志的记录列表
+            </summary>
+        </member>
+        <member name="M:Log.write(System.String)">
+            <summary>
+            将日志写入本地中
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:Log.writePhone(System.String)">
+            <summary>
+            将日志写入本地中
+            <para>-----注意: 获取日志要看-----</para>
+            <para>想发布Android不root获取日志必须在发布的时候 设置Player Settings中的Other Settings中的Write Access设置为External(SDCard)</para>
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:Log.writeError(System.String)">
+            <summary>
+            将日志写入本地中
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:Log.writeWarning(System.String)">
+            <summary>
+            将日志写入本地中
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:Log.LogSystemInfo(System.IO.StreamWriter)">
+            <summary>
+            打印系统信息
+            </summary>
+            <param name="sw"></param>
+        </member>
+        <member name="M:Log.LogSystemInfoPhone(System.IO.StreamWriter)">
+            <summary>
+            打印手机系统信息
+            </summary>
+            <param name="sw"></param>
+        </member>
+        <member name="M:Log.WhiteListAdd(System.String)">
+            <summary>
+            加入白名单
+            </summary>
+            <param name="className"></param>
+        </member>
+        <member name="M:Log.WhiteListRemove(System.String)">
+            <summary>
+            删除白名单
+            </summary>
+            <param name="className"></param>
+        </member>
+        <member name="M:Log.WhiteListClear">
+            <summary>
+            清理白名单
+            </summary>
+        </member>
+        <member name="M:Log.getLine(System.String)">
+            <summary>
+            获取字符串换行结构
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Log.DESLogDecrypt(System.String)">
+            <summary>
+            获取日志解密
+            </summary>
+            <param name="url">文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="P:Log.WriteLog">
+            <summary>
+            是否写入本地日志
+            </summary>
+        </member>
+        <member name="T:LogScreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LogScreen.Init(UnityEngine.Font)">
+            <summary>
+            初始化日志系统
+            </summary>
+        </member>
+    </members>
+</doc>
